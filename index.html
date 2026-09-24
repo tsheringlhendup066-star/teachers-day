@@ -3,23 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Teacher's Day Mission</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0b1020;
+            color: white;
+            min-height: 100vh;
+        }
+
+        .screen {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 700px;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            border: 1px solid #777;
+            border-radius: 30px;
+            padding: 8px 18px;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+
+        h1 {
+            font-size: clamp(40px, 8vw, 72px);
+            margin: 0 0 20px;
+            line-height: 1.05;
+        }
+
+        .subtitle {
+            color: #b8bfd3;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        button {
+            border: none;
+            background: white;
+            color: #0b1020;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .mission-number {
+            color: #9da7c4;
+            font-size: 14px;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            font-size: 30px;
+            line-height: 1.3;
+            margin-bottom: 35px;
+        }
+
+        .answers {
+            display: grid;
+            gap: 12px;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .answer {
+            background: #171e32;
+            color: white;
+            border: 1px solid #303951;
+            text-align: left;
+        }
+
+        .answer:hover {
+            background: #222b44;
+        }
+
+        .result {
+            margin-top: 25px;
+            font-size: 18px;
+            color: #dce2f2;
+        }
+
+        .continue {
+            margin-top: 25px;
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>🎓 Teacher's Day Mission</h1>
+    <!-- OPENING SCREEN -->
 
-    <p>Welcome, Teacher.</p>
+    <section id="welcome" class="screen">
+        <div class="container">
 
-    <p>Your special mission begins here.</p>
+            <div class="badge">
+                🎓 CLASSIFIED MISSION
+            </div>
 
-    <button onclick="startMission()">START MISSION</button>
+            <h1>Teacher's Day<br>Mission</h1>
+
+            <p class="subtitle">
+                A special mission has been prepared for you.<br>
+                But don't worry...
+                <br><br>
+                There are no assignments involved. 😌
+            </p>
+
+            <button onclick="startMission()">
+                BEGIN YOUR JOURNEY →
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- MISSION 1 -->
+
+    <section id="mission1" class="screen hidden">
+        <div class="container">
+
+            <div class="mission-number">
+                MISSION 01
+            </div>
+
+            <h2 class="question">
+                Which phrase have you probably said the most in class?
+            </h2>
+
+            <div class="answers">
+
+                <button class="answer" onclick="answer(true)">
+                    A. "Pay attention!"
+                </button>
+
+                <button class="answer" onclick="answer(true)">
+                    B. "Where is your assignment?"
+                </button>
+
+                <button class="answer" onclick="answer(true)">
+                    C. "I already explained this."
+                </button>
+
+                <button class="answer" onclick="answer(true)">
+                    D. "All of the above." 😂
+                </button>
+
+            </div>
+
+            <div id="result" class="result"></div>
+
+            <button id="nextButton"
+                    class="continue hidden"
+                    onclick="nextMission()">
+                CONTINUE →
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- MISSION 2 PLACEHOLDER -->
+
+    <section id="mission2" class="screen hidden">
+        <div class="container">
+
+            <div class="mission-number">
+                MISSION 02
+            </div>
+
+            <h2 class="question">
+                How well do you remember your students?
+            </h2>
+
+            <p class="subtitle">
+                This is where we're going to add your class's
+                real memories and inside jokes.
+            </p>
+
+            <button onclick="showComingSoon()">
+                CONTINUE →
+            </button>
+
+        </div>
+    </section>
+
 
     <script>
+
         function startMission() {
-            alert("Your mission has begun! ❤️");
+
+            document.getElementById("welcome").classList.add("hidden");
+
+            document.getElementById("mission1").classList.remove("hidden");
+
         }
+
+
+        function answer(correct) {
+
+            document.getElementById("result").innerHTML =
+                "😂 We knew you'd recognize that one.";
+
+            document.getElementById("nextButton").classList.remove("hidden");
+
+        }
+
+
+        function nextMission() {
+
+            document.getElementById("mission1").classList.add("hidden");
+
+            document.getElementById("mission2").classList.remove("hidden");
+
+        }
+
+
+        function showComingSoon() {
+
+            alert("This part will become one of your class's special memories ❤️");
+
+        }
+
     </script>
 
 </body>
