@@ -1,261 +1,792 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Teacher's Day Mission</title>
+<title>Teacher's Day Mission ❤️</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0b1020;
-            color: white;
-            min-height: 100vh;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        .screen {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 30px;
-        }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #080b14;
+    color: white;
+    min-height: 100vh;
+}
 
-        .container {
-            width: 100%;
-            max-width: 700px;
-            text-align: center;
-        }
+.screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    text-align: center;
+}
 
-        .badge {
-            display: inline-block;
-            border: 1px solid #777;
-            border-radius: 30px;
-            padding: 8px 18px;
-            font-size: 13px;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
-            color: #ccc;
-        }
+.container {
+    width: 100%;
+    max-width: 720px;
+    animation: fadeIn 0.8s ease;
+}
 
-        h1 {
-            font-size: clamp(40px, 8vw, 72px);
-            margin: 0 0 20px;
-            line-height: 1.05;
-        }
+.hidden {
+    display: none !important;
+}
 
-        .subtitle {
-            color: #b8bfd3;
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 40px;
-        }
+.badge {
+    display: inline-block;
+    border: 1px solid #555;
+    border-radius: 30px;
+    padding: 8px 18px;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #bbb;
+    margin-bottom: 30px;
+}
 
-        button {
-            border: none;
-            background: white;
-            color: #0b1020;
-            padding: 16px 32px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.2s;
-        }
+h1 {
+    font-size: clamp(42px, 8vw, 72px);
+    line-height: 1.05;
+    margin: 0 0 25px;
+}
 
-        button:hover {
-            transform: scale(1.05);
-        }
+h2 {
+    font-size: clamp(28px, 5vw, 45px);
+    line-height: 1.25;
+}
 
-        .hidden {
-            display: none;
-        }
+.subtitle {
+    color: #b7bdcc;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
 
-        .mission-number {
-            color: #9da7c4;
-            font-size: 14px;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-        }
+.mission-number {
+    color: #888fa5;
+    letter-spacing: 4px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
 
-        .question {
-            font-size: 30px;
-            line-height: 1.3;
-            margin-bottom: 35px;
-        }
+.question {
+    margin-bottom: 35px;
+}
 
-        .answers {
-            display: grid;
-            gap: 12px;
-            max-width: 500px;
-            margin: auto;
-        }
+button {
+    border: none;
+    background: white;
+    color: #080b14;
+    padding: 15px 28px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s;
+}
 
-        .answer {
-            background: #171e32;
-            color: white;
-            border: 1px solid #303951;
-            text-align: left;
-        }
+button:hover {
+    transform: translateY(-3px);
+}
 
-        .answer:hover {
-            background: #222b44;
-        }
+.answers {
+    display: grid;
+    gap: 12px;
+    max-width: 560px;
+    margin: auto;
+}
 
-        .result {
-            margin-top: 25px;
-            font-size: 18px;
-            color: #dce2f2;
-        }
+.answer {
+    background: #151a2a;
+    color: white;
+    border: 1px solid #30374c;
+    text-align: left;
+}
 
-        .continue {
-            margin-top: 25px;
-        }
-    </style>
+.answer:hover {
+    background: #22293c;
+}
+
+.result {
+    margin-top: 25px;
+    color: #dfe4f1;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.next {
+    margin-top: 25px;
+}
+
+.memory-card {
+    background: #121725;
+    border: 1px solid #30374c;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 25px auto;
+    max-width: 600px;
+}
+
+.memory-card p {
+    font-size: 21px;
+    line-height: 1.7;
+    color: #e5e8ef;
+}
+
+.heart {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.message {
+    font-size: 25px;
+    line-height: 1.7;
+    color: #e7e9ef;
+    margin: 30px auto;
+    max-width: 650px;
+}
+
+.big-message {
+    font-size: clamp(35px, 7vw, 65px);
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.final-message {
+    font-size: 21px;
+    line-height: 1.9;
+    color: #cfd4df;
+    max-width: 650px;
+    margin: 30px auto;
+}
+
+.signature {
+    margin-top: 40px;
+    font-size: 18px;
+    color: #aaa;
+}
+
+.fade {
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+</style>
 </head>
+
 
 <body>
 
-    <!-- OPENING SCREEN -->
 
-    <section id="welcome" class="screen">
-        <div class="container">
+<!-- ========================= -->
+<!-- WELCOME -->
+<!-- ========================= -->
 
-            <div class="badge">
-                🎓 CLASSIFIED MISSION
-            </div>
+<section id="welcome" class="screen">
 
-            <h1>Teacher's Day<br>Mission</h1>
+<div class="container">
 
-            <p class="subtitle">
-                A special mission has been prepared for you.<br>
-                But don't worry...
-                <br><br>
-                There are no assignments involved. 😌
-            </p>
+<div class="badge">
+🎓 CLASSIFIED MISSION
+</div>
 
-            <button onclick="startMission()">
-                BEGIN YOUR JOURNEY →
-            </button>
+<h1>
+Teacher's Day<br>
+Mission
+</h1>
 
-        </div>
-    </section>
+<p class="subtitle">
 
+A special mission has been prepared for you.
 
-    <!-- MISSION 1 -->
+<br><br>
 
-    <section id="mission1" class="screen hidden">
-        <div class="container">
+There are no assignments.<br>
+No attendance.<br>
+And absolutely no homework. 😌
 
-            <div class="mission-number">
-                MISSION 01
-            </div>
+<br><br>
 
-            <h2 class="question">
-                Which phrase have you probably said the most in class?
-            </h2>
+But there is one rule...
 
-            <div class="answers">
+</p>
 
-                <button class="answer" onclick="answer(true)">
-                    A. "Pay attention!"
-                </button>
+<button onclick="show('mission1')">
+BEGIN YOUR JOURNEY →
+</button>
 
-                <button class="answer" onclick="answer(true)">
-                    B. "Where is your assignment?"
-                </button>
+</div>
 
-                <button class="answer" onclick="answer(true)">
-                    C. "I already explained this."
-                </button>
-
-                <button class="answer" onclick="answer(true)">
-                    D. "All of the above." 😂
-                </button>
-
-            </div>
-
-            <div id="result" class="result"></div>
-
-            <button id="nextButton"
-                    class="continue hidden"
-                    onclick="nextMission()">
-                CONTINUE →
-            </button>
-
-        </div>
-    </section>
+</section>
 
 
-    <!-- MISSION 2 PLACEHOLDER -->
 
-    <section id="mission2" class="screen hidden">
-        <div class="container">
+<!-- ========================= -->
+<!-- MISSION 1 -->
+<!-- ========================= -->
 
-            <div class="mission-number">
-                MISSION 02
-            </div>
+<section id="mission1" class="screen hidden">
 
-            <h2 class="question">
-                How well do you remember your students?
-            </h2>
+<div class="container">
 
-            <p class="subtitle">
-                This is where we're going to add your class's
-                real memories and inside jokes.
-            </p>
+<div class="mission-number">
+MISSION 01
+</div>
 
-            <button onclick="showComingSoon()">
-                CONTINUE →
-            </button>
+<h2 class="question">
+Which phrase have you probably said the most?
+</h2>
 
-        </div>
-    </section>
+<div class="answers">
+
+<button class="answer" onclick="correctAnswer('mission1','😂 We had a feeling you would recognize that one.')">
+"Pay attention!"
+</button>
+
+<button class="answer" onclick="correctAnswer('mission1','😂 We had a feeling you would recognize that one.')">
+"Where is your assignment?"
+</button>
+
+<button class="answer" onclick="correctAnswer('mission1','😂 We had a feeling you would recognize that one.')">
+"I already explained this."
+</button>
+
+<button class="answer" onclick="correctAnswer('mission1','😂 Exactly. All of the above.')">
+"All of the above."
+</button>
+
+</div>
+
+<div id="result1" class="result"></div>
+
+<button id="next1" class="next hidden" onclick="show('mission2')">
+NEXT MISSION →
+</button>
+
+</div>
+
+</section>
 
 
-    <script>
 
-        function startMission() {
+<!-- ========================= -->
+<!-- MISSION 2 -->
+<!-- ========================= -->
 
-            document.getElementById("welcome").classList.add("hidden");
+<section id="mission2" class="screen hidden">
 
-            document.getElementById("mission1").classList.remove("hidden");
+<div class="container">
+
+<div class="mission-number">
+MISSION 02
+</div>
+
+<h2>
+How well do you remember your students?
+</h2>
+
+<p class="subtitle">
+Let's test your teacher memory.
+</p>
+
+<div class="memory-card">
+
+<p>
+<strong>
+Question:
+</strong>
+<br><br>
+
+What do students usually do when the teacher says...
+
+<br><br>
+
+"Does everyone understand?"
+</p>
+
+</div>
+
+<div class="answers">
+
+<button class="answer" onclick="correctAnswer('mission2','😂 The classic response: complete silence.')">
+A. Say "Yes, Sir/Ma'am"
+</button>
+
+<button class="answer" onclick="correctAnswer('mission2','😂 Exactly. Everyone suddenly becomes very quiet.')">
+B. Stay completely silent
+</button>
+
+<button class="answer" onclick="correctAnswer('mission2','😂 Somehow... both.')">
+C. Look at each other
+</button>
+
+<button class="answer" onclick="correctAnswer('mission2','😂 You already know your students too well.')">
+D. All of the above
+</button>
+
+</div>
+
+<div id="result2" class="result"></div>
+
+<button id="next2" class="next hidden" onclick="show('mission3')">
+NEXT MISSION →
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- MISSION 3 -->
+<!-- ========================= -->
+
+<section id="mission3" class="screen hidden">
+
+<div class="container">
+
+<div class="mission-number">
+MISSION 03
+</div>
+
+<h2>
+Who said it?
+</h2>
+
+<p class="subtitle">
+Every class has at least one person who says something unforgettable.
+</p>
+
+<div class="memory-card">
+
+<p>
+"Sir/Ma'am, I studied...<br>
+but apparently I studied the wrong chapter." 😂
+</p>
+
+</div>
+
+<p class="subtitle">
+Can you guess which student said it?
+</p>
+
+<button onclick="revealStudent()">
+MAKE YOUR GUESS →
+</button>
+
+<div id="studentReveal" class="result"></div>
+
+<button id="next3" class="next hidden" onclick="show('mission4')">
+NEXT MISSION →
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- MISSION 4 -->
+<!-- ========================= -->
+
+<section id="mission4" class="screen hidden">
+
+<div class="container">
+
+<div class="mission-number">
+MISSION 04
+</div>
+
+<h2>
+One final question...
+</h2>
+
+<p class="subtitle">
+What is the most important thing a teacher can give a student?
+</p>
+
+<div class="answers">
+
+<button class="answer" onclick="deepAnswer()">
+Knowledge
+</button>
+
+<button class="answer" onclick="deepAnswer()">
+Discipline
+</button>
+
+<button class="answer" onclick="deepAnswer()">
+Confidence
+</button>
+
+<button class="answer" onclick="deepAnswer()">
+A second chance
+</button>
+
+</div>
+
+<div id="deepResult" class="result"></div>
+
+<button id="next4" class="next hidden" onclick="show('mission5')">
+CONTINUE →
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- MISSION 5 -->
+<!-- ========================= -->
+
+<section id="mission5" class="screen hidden">
+
+<div class="container">
+
+<div class="mission-number">
+MISSION 05
+</div>
+
+<div class="heart">
+❤️
+</div>
+
+<h2>
+Now forget about the game.
+</h2>
+
+<p class="message">
+
+We asked you questions because we wanted
+to make you smile.
+
+<br><br>
+
+But there is something we actually wanted
+you to see.
+
+</p>
+
+<button onclick="show('messages')">
+OPEN THE MESSAGE →
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- STUDENT MESSAGES -->
+<!-- ========================= -->
+
+<section id="messages" class="screen hidden">
+
+<div class="container">
+
+<div class="mission-number">
+A MESSAGE FROM YOUR STUDENTS
+</div>
+
+<div id="messageText" class="message fade">
+</div>
+
+<button id="messageButton" onclick="nextMessage()">
+NEXT MESSAGE →
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- FINAL REVEAL -->
+<!-- ========================= -->
+
+<section id="final" class="screen hidden">
+
+<div class="container fade">
+
+<div class="heart">
+❤️
+</div>
+
+<div class="big-message">
+You thought you were teaching us.
+</div>
+
+<br>
+
+<div class="big-message">
+But you were also changing us.
+</div>
+
+<p class="final-message">
+
+Every lesson.
+
+<br>
+Every correction.
+
+<br>
+Every "try again."
+
+<br>
+Every time you stayed a little longer
+to explain something we didn't understand.
+
+<br><br>
+
+You may not remember every lesson
+you taught us.
+
+<br><br>
+
+But we will remember the way
+you made us feel while learning.
+
+<br><br>
+
+Somewhere along the way,
+you became more than just our teacher.
+
+<br><br>
+
+You became a part of our journey.
+
+</p>
+
+<button onclick="show('gift')">
+ONE LAST THING →
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- GIFT REVEAL -->
+<!-- ========================= -->
+
+<section id="gift" class="screen hidden">
+
+<div class="container fade">
+
+<div class="heart">
+🎁
+</div>
+
+<h1>
+MISSION COMPLETE
+</h1>
+
+<p class="final-message">
+
+You came here expecting a game.
+
+<br><br>
+
+But this was really our way of saying...
+
+</p>
+
+<div class="big-message">
+Thank You.
+</div>
+
+<p class="final-message">
+
+For your patience.<br>
+For your guidance.<br>
+For believing in us.<br>
+And for being there when we needed it.
+
+</p>
+
+<h2>
+Happy Teacher's Day ❤️
+</h2>
+
+<p class="signature">
+— From all of your students
+</p>
+
+<br>
+
+<p class="subtitle">
+Your final surprise isn't on this screen.
+<br><br>
+Please look up. 😊
+</p>
+
+</div>
+
+</section>
+
+
+
+<script>
+
+
+/* ========================= */
+/* SCREEN NAVIGATION */
+/* ========================= */
+
+function show(id) {
+
+    const screens = document.querySelectorAll(".screen");
+
+    screens.forEach(screen => {
+        screen.classList.add("hidden");
+    });
+
+    document.getElementById(id).classList.remove("hidden");
+
+    window.scrollTo(0,0);
+}
+
+
+
+/* ========================= */
+/* ANSWER SYSTEM */
+/* ========================= */
+
+function correctAnswer(mission, text) {
+
+    const number = mission.replace("mission","");
+
+    document.getElementById("result" + number).innerHTML = text;
+
+    document.getElementById("next" + number).classList.remove("hidden");
+
+}
+
+
+
+/* ========================= */
+/* STUDENT REVEAL */
+/* ========================= */
+
+function revealStudent() {
+
+    document.getElementById("studentReveal").innerHTML =
+
+    "😂 Nice try!<br><br>" +
+
+    "The answer isn't important.<br>" +
+
+    "What matters is that every class has memories like this.";
+
+    document.getElementById("next3").classList.remove("hidden");
+
+}
+
+
+
+/* ========================= */
+/* DEEP QUESTION */
+/* ========================= */
+
+function deepAnswer() {
+
+    document.getElementById("deepResult").innerHTML =
+
+    "Maybe it's not just one thing.<br><br>" +
+
+    "A teacher gives knowledge... " +
+
+    "but sometimes they also give a student " +
+
+    "the confidence to believe they can succeed.";
+
+    document.getElementById("next4").classList.remove("hidden");
+
+}
+
+
+
+/* ========================= */
+/* STUDENT MESSAGES */
+/* ========================= */
+
+const messages = [
+
+    "Thank you for being patient with us, even when we made the same mistake more than once.",
+
+    "Thank you for answering our questions, even when they came at the most unexpected times.",
+
+    "Thank you for pushing us when we wanted to give up.",
+
+    "Thank you for believing that we could do better, even when we didn't believe it ourselves.",
+
+    "Some lessons may disappear from our notebooks someday... but the lessons you taught us about life will stay.",
+
+    "We may not say it often enough, but we truly appreciate everything you do for us."
+
+];
+
+let messageIndex = 0;
+
+
+function nextMessage() {
+
+    if (messageIndex < messages.length) {
+
+        document.getElementById("messageText").classList.remove("fade");
+
+        void document.getElementById("messageText").offsetWidth;
+
+        document.getElementById("messageText").innerHTML =
+            messages[messageIndex];
+
+        document.getElementById("messageText").classList.add("fade");
+
+        messageIndex++;
+
+        if (messageIndex === messages.length) {
+
+            document.getElementById("messageButton").innerHTML =
+                "READ OUR FINAL MESSAGE ❤️";
 
         }
 
+    } else {
 
-        function answer(correct) {
+        show("final");
 
-            document.getElementById("result").innerHTML =
-                "😂 We knew you'd recognize that one.";
+    }
 
-            document.getElementById("nextButton").classList.remove("hidden");
-
-        }
+}
 
 
-        function nextMission() {
-
-            document.getElementById("mission1").classList.add("hidden");
-
-            document.getElementById("mission2").classList.remove("hidden");
-
-        }
-
-
-        function showComingSoon() {
-
-            alert("This part will become one of your class's special memories ❤️");
-
-        }
-
-    </script>
+</script>
 
 </body>
 </html>
